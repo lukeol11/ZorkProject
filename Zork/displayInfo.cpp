@@ -11,8 +11,14 @@ displayInfo::displayInfo(){
 
 //Setting Message to show in main window
 void displayInfo::setMessage(std::string text){
-    outMessage=text;
+    if (outMessage != ""){
+        outMessage = outMessage+"<br>"+text;
+    } else {
+        outMessage = text;
+    }
 }
+
 std::string displayInfo::getMessage(){
     return outMessage;
+    outMessage = "";
 }

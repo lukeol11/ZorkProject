@@ -76,13 +76,10 @@ void ZorkUL::play() {
 }
 
 void ZorkUL::printWelcome() {
-    hd.setMessage("start");
-    cout << "start"<< endl;
-    //setMessage("info for help");
-    cout << "info for help"<< endl;
-    cout << endl;
-    //setMessage(currentRoom->longDescription());
-    cout << currentRoom->longDescription() << endl;
+    hd.setMessage("Start!");
+    hd.setMessage("Press Info for help");
+    hd.setMessage(" ");
+    hd.setMessage(currentRoom->longDescription());
 }
 
 /**
@@ -97,16 +94,16 @@ bool ZorkUL::processCommand(Command command) {
 
 	else if (commandWord.compare("map") == 0)
 		{
-        hd.setMessage("        [j]        ");
-        hd.setMessage("         |         ");
-        hd.setMessage("         |         ");
-        hd.setMessage("[h] --- [f] --- [g]");
-        hd.setMessage("         |         ");
-        hd.setMessage("         |         ");
-        hd.setMessage("[c] --- [a] --- [b]");
-        hd.setMessage("         |         ");
-        hd.setMessage("         |         ");
-        hd.setMessage("[i] --- [d] --- [e]");
+        hd.setMessage("|        [j]        |");
+        hd.setMessage("|         |         |");
+        hd.setMessage("|         |         |");
+        hd.setMessage("|[h] --- [f] --- [g]|");
+        hd.setMessage("|         |         |");
+        hd.setMessage("|         |         |");
+        hd.setMessage("|[c] --- [a] --- [b]|");
+        hd.setMessage("|         |         |");
+        hd.setMessage("|         |         |");
+        hd.setMessage("|[i] --- [d] --- [e]|");
 		}
 
 	else if (commandWord.compare("go") == 0)
@@ -115,20 +112,20 @@ bool ZorkUL::processCommand(Command command) {
     else if (commandWord.compare("take") == 0)
     {
        	if (!command.hasSecondWord()) {
-		cout << "incomplete input"<< endl;
+        hd.setMessage("incomplete input");
         }
         else
          if (command.hasSecondWord()) {
-        cout << "you're trying to take " + command.getSecondWord() << endl;
+        hd.setMessage("you're trying to take " + command.getSecondWord());
         int location = currentRoom->isItemInRoom(command.getSecondWord());
         if (location  < 0 )
-            cout << "item is not in room" << endl;
+            hd.setMessage("item is not in room");
         else
-            cout << "item is in room" << endl;
+            hd.setMessage("item is in room");
 
-        cout << "index number " << + location << endl;
-        cout << endl;
-        cout << currentRoom->longDescription() << endl;
+        hd.setMessage("index number ");
+        hd.setMessage(" ");
+        hd.setMessage(currentRoom->longDescription());
         }
     }
 
@@ -150,7 +147,7 @@ bool ZorkUL::processCommand(Command command) {
 */
     else if (commandWord.compare("quit") == 0) {
 		if (command.hasSecondWord())
-			cout << "overdefined input"<< endl;
+            hd.setMessage("overdefined input");
 		else
 			return true; /**signal to quit*/
 	}
@@ -158,14 +155,14 @@ bool ZorkUL::processCommand(Command command) {
 }
 /** COMMANDS **/
 void ZorkUL::printHelp() {
-	cout << "valid inputs are; " << endl;
+    hd.setMessage("valid inputs are; ");
 	parser.showCommands();
 
 }
 
 void ZorkUL::goRoom(Command command) {
 	if (!command.hasSecondWord()) {
-		cout << "incomplete input"<< endl;
+        hd.setMessage("incoming input");
 		return;
 	}
 
@@ -175,10 +172,10 @@ void ZorkUL::goRoom(Command command) {
 	Room* nextRoom = currentRoom->nextRoom(direction);
 
 	if (nextRoom == NULL)
-		cout << "underdefined input"<< endl;
+        hd.setMessage("underdefined input");
 	else {
 		currentRoom = nextRoom;
-		cout << currentRoom->longDescription() << endl;
+        hd.setMessage(currentRoom->longDescription());
 	}
 }
 

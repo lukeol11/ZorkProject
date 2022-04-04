@@ -1,4 +1,5 @@
 #include "CommandWords.h"
+#include "displayInfo.h"
 
 vector<string> CommandWords::validCommands;
 
@@ -35,10 +36,11 @@ bool CommandWords::isCommand(string aString) {
  * Print all valid commands to System.out.
  */
 void CommandWords::showAll() {
+    std::string temp;
 	//Loops through validCommands and prints each to the screen.
 	for (unsigned int i = 0; i < validCommands.size(); i++)
 	{
-		cout << validCommands[i]<< "  ";
+        temp = temp + validCommands[i] + "  ";
 	}
-	cout << endl;
+    hd.setMessage(temp);
 }

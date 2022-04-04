@@ -1,4 +1,5 @@
 #include "Parser.h"
+#include "displayInfo.h"
 
 Parser::Parser() {
 	commands = new CommandWords();
@@ -11,7 +12,7 @@ Command* Parser::getCommand() {
 	string buffer;
 	vector<string> words;
 
-	cout << "> "; // print prompt
+    hd.setMessage("> ");
 
 	getline(cin, buffer, '\n');	// read a line from cin to "buffer"
 

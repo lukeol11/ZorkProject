@@ -37,6 +37,8 @@ private slots:
     void on_mapButton_clicked();
 
 
+    void on_infoButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

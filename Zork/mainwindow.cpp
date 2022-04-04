@@ -58,10 +58,18 @@ void MainWindow::on_mapButton_clicked()
     setText(hd.getMessage());
 }
 
+void MainWindow::on_infoButton_clicked()
+{
+    Command command("info","");
+    t.processCommand(command);
+    setText(hd.getMessage());
+}
+
 
 //output for display
 void MainWindow::setText(string content){
-    ui->displayWindow->appendPlainText(QString::fromStdString(content)); //std string to qstring
+    ui->displayWindow->setFont(QFont("Monospace",9));
+    ui->displayWindow->setText(QString::fromStdString(content)); //std string to qstring
     //ui->displayWindow->
 }
 
@@ -69,3 +77,6 @@ void MainWindow::setText(string content){
 void MainWindow::setInventory(string content){
     ui->inventoryView->addItem(QString::fromStdString(content));
 }
+
+
+
