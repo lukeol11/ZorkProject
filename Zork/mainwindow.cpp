@@ -57,12 +57,6 @@ void MainWindow::setText(string content){
 }
 
 
-
-
-
-
-
-
-
-
-
+void MainWindow::setInventory(string content){
+    ui->inventoryView->addItem(QString::fromStdString(content));
+}

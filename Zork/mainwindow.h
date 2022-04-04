@@ -20,6 +20,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     void setText(string content);
+    void setInventory(string content);
 
 private slots:
     void on_northButton_clicked();
