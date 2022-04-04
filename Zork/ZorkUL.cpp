@@ -1,32 +1,17 @@
 #include <iostream>
 #include "mainwindow.h"
-
 #include <QApplication>
-
 #include "ZorkUL.h"
+#include "displayInfo.h"
 
-
-//void setOutput(string Text){w.setText(Text);}
-std::string outMessage;
-
-
-void setMessage(std::string text){
-    outMessage=text;
-}
-std::string getMessage(){
-    return outMessage;
-}
+displayInfo hd;
 
 int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
     MainWindow w;
     w.show();
-    setMessage("test123456");
-    w.setText(getMessage());
-
-    ZorkUL temp;
-    temp.play();
-    //return 0;
+    ZorkUL t;
+    t.play();
     return a.exec();
 }
 
@@ -85,13 +70,13 @@ void ZorkUL::play() {
 		//   with ("return new Command(...)")
         delete command;
     }*/
-    cout << endl;
-    cout << "end" << endl;
+    //cout << endl;
+    //cout << "end" << endl;
     //setMessage("end");
 }
 
 void ZorkUL::printWelcome() {
-    //setMessage("start");
+    hd.setMessage("start");
     cout << "start"<< endl;
     //setMessage("info for help");
     cout << "info for help"<< endl;
@@ -112,16 +97,16 @@ bool ZorkUL::processCommand(Command command) {
 
 	else if (commandWord.compare("map") == 0)
 		{
-        cout << "        [j]        " << endl;
-        cout << "         |         " << endl;
-        cout << "         |         " << endl;
-        cout << "[h] --- [f] --- [g]" << endl;
-		cout << "         |         " << endl;
-        cout << "         |         " << endl;
-		cout << "[c] --- [a] --- [b]" << endl;
-		cout << "         |         " << endl;
-		cout << "         |         " << endl;
-		cout << "[i] --- [d] --- [e]" << endl;
+        hd.setMessage("        [j]        ");
+        hd.setMessage("         |         ");
+        hd.setMessage("         |         ");
+        hd.setMessage("[h] --- [f] --- [g]");
+        hd.setMessage("         |         ");
+        hd.setMessage("         |         ");
+        hd.setMessage("[c] --- [a] --- [b]");
+        hd.setMessage("         |         ");
+        hd.setMessage("         |         ");
+        hd.setMessage("[i] --- [d] --- [e]");
 		}
 
 	else if (commandWord.compare("go") == 0)

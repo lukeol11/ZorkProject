@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "Command.h"
 #include "ZorkUL.h"
+#include "displayInfo.h"
 using namespace std;
 
 QT_BEGIN_NAMESPACE
@@ -21,6 +22,8 @@ public:
     ~MainWindow();
     void setText(string content);
     void setInventory(string content);
+
+
 
 private slots:
     void on_northButton_clicked();

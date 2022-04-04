@@ -8,8 +8,9 @@
 #include "item.h"
 #include <iostream>
 #include <string>
+#include "displayInfo.h"
 
-//using namespace std;
+
 
 class ZorkUL {
 private:
@@ -21,7 +22,8 @@ private:
     void goRoom(Command command);
     void createItems();
     void displayItems();
-    void setMessage(std::string Text);
+
+
 
 
 
@@ -29,7 +31,6 @@ public:
 	ZorkUL();
 	void play();
 	string go(string direction);
-    std::string getMessage();
     bool processCommand(Command command);
 };
 
