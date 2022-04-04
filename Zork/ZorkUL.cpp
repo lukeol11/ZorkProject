@@ -1,11 +1,19 @@
 #include <iostream>
+#include "mainwindow.h"
 
+#include <QApplication>
 using namespace std;
 #include "ZorkUL.h"
 
-int main(int argc, char argv[]) {
-	ZorkUL temp;
-	temp.play();
+int main(int argc, char *argv[]) {
+
+    QApplication a(argc, argv);
+    MainWindow w;
+    w.show();
+    return a.exec();
+
+    /*ZorkUL temp;
+    temp.play();*/
 	return 0;
 }
 
@@ -190,3 +198,4 @@ string ZorkUL::go(string direction) {
 		return currentRoom->longDescription();
 	}
 }
+
