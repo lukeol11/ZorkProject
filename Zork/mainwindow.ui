@@ -7,74 +7,109 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>600</height>
+    <height>473</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="northButton">
+   <widget class="QWidget" name="gridLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>110</y>
-      <width>83</width>
-      <height>29</height>
+      <x>230</x>
+      <y>20</y>
+      <width>531</width>
+      <height>351</height>
      </rect>
     </property>
-    <property name="text">
-     <string>North</string>
-    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="2" column="1">
+      <widget class="QPushButton" name="southButton">
+       <property name="text">
+        <string>South</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QPushButton" name="westButton">
+       <property name="text">
+        <string>West</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QPushButton" name="northButton">
+       <property name="text">
+        <string>North</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QPushButton" name="eastButton">
+       <property name="text">
+        <string>East</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QTextBrowser" name="displayWindow"/>
+     </item>
+    </layout>
    </widget>
-   <widget class="QPushButton" name="westButton">
+   <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>250</y>
-      <width>83</width>
-      <height>29</height>
+      <x>20</x>
+      <y>20</y>
+      <width>160</width>
+      <height>351</height>
      </rect>
     </property>
-    <property name="text">
-     <string>West</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="eastButton">
-    <property name="geometry">
-     <rect>
-      <x>650</x>
-      <y>260</y>
-      <width>83</width>
-      <height>29</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>East</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="southButton">
-    <property name="geometry">
-     <rect>
-      <x>380</x>
-      <y>450</y>
-      <width>83</width>
-      <height>29</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>South</string>
-    </property>
-   </widget>
-   <widget class="QTextBrowser" name="displayWindow">
-    <property name="geometry">
-     <rect>
-      <x>270</x>
-      <y>190</y>
-      <width>256</width>
-      <height>192</height>
-     </rect>
-    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QPushButton" name="mapButton">
+       <property name="text">
+        <string>Map</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="infoButton">
+       <property name="text">
+        <string>Info</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="dropButton">
+       <property name="text">
+        <string>Drop</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pickupButton">
+       <property name="text">
+        <string>Pickup</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QListWidget" name="listWidget">
+       <item>
+        <property name="text">
+         <string>test</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>test2</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

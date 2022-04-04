@@ -85,19 +85,19 @@ void ZorkUL::play() {
 		//   with ("return new Command(...)")
         delete command;
     }*/
-    //cout << endl;
-    //cout << "end" << endl;
+    cout << endl;
+    cout << "end" << endl;
     //setMessage("end");
 }
 
 void ZorkUL::printWelcome() {
     //setMessage("start");
-    //cout << "start"<< endl;
+    cout << "start"<< endl;
     //setMessage("info for help");
-    //cout << "info for help"<< endl;
-    //cout << endl;
+    cout << "info for help"<< endl;
+    cout << endl;
     //setMessage(currentRoom->longDescription());
-    //cout << currentRoom->longDescription() << endl;
+    cout << currentRoom->longDescription() << endl;
 }
 
 /**

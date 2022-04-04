@@ -18,7 +18,7 @@ private:
 	void createRooms();
 	void printWelcome();
 	void printHelp();
-	void goRoom(Command command);
+    void goRoom(Command command);
     void createItems();
     void displayItems();
     void setMessage(std::string Text);
