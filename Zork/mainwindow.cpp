@@ -3,6 +3,7 @@
 //#include <string>
 //using namespace std;
 
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -19,25 +20,33 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_northButton_clicked()
 {
-    setText("North");
+    Command command("go", "north");
+    ZorkUL t;
+    t.processCommand(command);
 }
 
 
 void MainWindow::on_southButton_clicked()
 {
-
+     Command command("go", "south");
+     ZorkUL t;
+     t.processCommand(command);
 }
 
 
 void MainWindow::on_westButton_clicked()
 {
-
+    Command command("go", "west");
+    ZorkUL t;
+    t.processCommand(command);
 }
 
 
 void MainWindow::on_eastButton_clicked()
 {
-
+    Command command("go", "east");
+    ZorkUL t;
+    t.processCommand(command);
 }
 
 //output for display

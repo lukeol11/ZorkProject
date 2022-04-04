@@ -2,19 +2,32 @@
 #include "mainwindow.h"
 
 #include <QApplication>
-using namespace std;
+
 #include "ZorkUL.h"
 
-int main(int argc, char *argv[]) {
 
+//void setOutput(string Text){w.setText(Text);}
+std::string outMessage;
+
+
+void setMessage(std::string text){
+    outMessage=text;
+}
+std::string getMessage(){
+    return outMessage;
+}
+
+int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
     MainWindow w;
     w.show();
-    return a.exec();
+    setMessage("test123456");
+    w.setText(getMessage());
 
-    /*ZorkUL temp;
-    temp.play();*/
-	return 0;
+    ZorkUL temp;
+    temp.play();
+    //return 0;
+    return a.exec();
 }
 
 ZorkUL::ZorkUL() {
@@ -59,11 +72,10 @@ void ZorkUL::createRooms()  {
  */
 void ZorkUL::play() {
 	printWelcome();
-
 	// Enter the main command loop.  Here we repeatedly read commands and
 	// execute them until the ZorkUL game is over.
 
-	bool finished = false;
+    /*bool finished = false;
 	while (!finished) {
 		// Create pointer to command and give it a command.
 		Command* command = parser.getCommand();
@@ -71,17 +83,21 @@ void ZorkUL::play() {
 		finished = processCommand(*command);
 		// Free the memory allocated by "parser.getCommand()"
 		//   with ("return new Command(...)")
-		delete command;
-	}
-	cout << endl;
-	cout << "end" << endl;
+        delete command;
+    }*/
+    //cout << endl;
+    //cout << "end" << endl;
+    //setMessage("end");
 }
 
 void ZorkUL::printWelcome() {
-	cout << "start"<< endl;
-	cout << "info for help"<< endl;
-	cout << endl;
-	cout << currentRoom->longDescription() << endl;
+    //setMessage("start");
+    //cout << "start"<< endl;
+    //setMessage("info for help");
+    //cout << "info for help"<< endl;
+    //cout << endl;
+    //setMessage(currentRoom->longDescription());
+    //cout << currentRoom->longDescription() << endl;
 }
 
 /**
@@ -90,11 +106,6 @@ void ZorkUL::printWelcome() {
  * returned.
  */
 bool ZorkUL::processCommand(Command command) {
-	if (command.isUnknown()) {
-		cout << "invalid input"<< endl;
-		return false;
-	}
-
 	string commandWord = command.getCommandWord();
 	if (commandWord.compare("info") == 0)
 		printHelp();
@@ -129,9 +140,10 @@ bool ZorkUL::processCommand(Command command) {
             cout << "item is not in room" << endl;
         else
             cout << "item is in room" << endl;
-            cout << "index number " << + location << endl;
-            cout << endl;
-            cout << currentRoom->longDescription() << endl;
+
+        cout << "index number " << + location << endl;
+        cout << endl;
+        cout << currentRoom->longDescription() << endl;
         }
     }
 

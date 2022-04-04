@@ -2,11 +2,15 @@
 #define MAINWINDOW_H
 #include <string>
 #include <QMainWindow>
+#include "Command.h"
+#include "ZorkUL.h"
 using namespace std;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
+
+
 
 class MainWindow : public QMainWindow
 {
