@@ -16,7 +16,6 @@ SOURCES += \
     Room.cpp \
     ZorkUL.cpp \
     item.cpp \
-    main.cpp \
     mainwindow.cpp
 
 HEADERS += \

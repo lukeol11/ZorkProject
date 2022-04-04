@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="northButton">
     <property name="geometry">
      <rect>
       <x>370</x>
@@ -27,7 +27,7 @@
      <string>North</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="westButton">
     <property name="geometry">
      <rect>
       <x>90</x>
@@ -40,7 +40,7 @@
      <string>West</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="eastButton">
     <property name="geometry">
      <rect>
       <x>650</x>
@@ -53,7 +53,7 @@
      <string>East</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_4">
+   <widget class="QPushButton" name="southButton">
     <property name="geometry">
      <rect>
       <x>380</x>
@@ -64,6 +64,16 @@
     </property>
     <property name="text">
      <string>South</string>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="displayWindow">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>190</y>
+      <width>256</width>
+      <height>192</height>
+     </rect>
     </property>
    </widget>
   </widget>
