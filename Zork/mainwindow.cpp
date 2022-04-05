@@ -23,6 +23,12 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::update(){
+    setRoomItems();
+    setText(hd.getMessage());
+    setInventoryItems();
+}
+
 std::string MainWindow::getRoomItem(){
     return roomItem;
 }
@@ -86,6 +92,7 @@ void MainWindow::on_pickupButton_clicked(){
     if (getRoomItem() != ""){
     hd.setInventoryItems(getRoomItem());
     hd.removeRoomItems(getRoomItem());
+    //steve.addItem(new Item(getInventoryItem(),1,1));
     t.removeRoomItem(Item(getRoomItem(),1,1));
     setInventoryItems();
     setRoomItems();
@@ -97,6 +104,8 @@ void MainWindow::on_dropButton_clicked(){
     if (getInventoryItem() != ""){
     hd.setRoomItems(getInventoryItem());
     hd.removeInventoryItems(getInventoryItem());
+    //steve.removeItem(Item(getInventoryItem(),1,1));
+    t.addRoomItem(new Item(getInventoryItem(),1,1));
     setInventoryItems();
     setRoomItems();
     }

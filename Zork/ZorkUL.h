@@ -36,8 +36,7 @@ public:
 	string go(string direction);
     bool processCommand(Command command);
     void removeRoomItem(Item temp);
-
-
+    void addRoomItem(Item *temp);
 };
 
 

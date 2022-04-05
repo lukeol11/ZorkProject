@@ -14,23 +14,14 @@ void Character::addItem(Item *inItem) {
 
 
 
-void Character::removeItem(Item *inItem) {
-    for (auto it = begin (itemsInInventory); it != end (itemsInInventory); ++it){
-        if (it->getLongDescription() == inItem->getLongDescription()){
-            itemsInInventory.erase(it);
-            break;
-        }
+void Character::removeItem(Item obj) {
+    vector pVector = itemsInInventory;
+    for(int i=0; i < pVector.size(); i++){
+       if (pVector[i].isEqual(obj)){
+           pVector.erase(pVector.begin()+i);
+       }
     }
-
-
-
-
-    /*auto itr = std::find(itemsInInventory.begin(),itemsInInventory.end(), *inItem);
-    if (itr != itemsInInventory.end()) itemsInInventory.erase(itr);*/
-    //itemsInInventory.erase(std::remove(itemsInInventory.begin(), itemsInInventory.end(), *inItem),itemsInInventory.end());
-    /*itemsInInventory.erase(std::remove_if(itemsInInventory.begin(), itemsInInventory.end(),
-                                          [&inItem](Character * i){} ));*/
-    //auto itr = std::find(itemsInInventory.begin(),itemsInInventory.end(), *inItem);
+    itemsInInventory = pVector;
 }
 
 string Character::displayItem() {

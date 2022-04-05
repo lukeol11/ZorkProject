@@ -29,6 +29,7 @@ public:
     void setText(string content);
     void setInventoryItems();
     void setRoomItems();
+    void update();
 
 
 

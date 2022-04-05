@@ -12,9 +12,10 @@ int main(int argc, char *argv[]) {
     w.show();
     ZorkUL t;
     t.play();
+    w.update();
     //updates text on startup
-    w.setText(hd.getMessage());
-    w.setRoomItems();
+    //w.setText(hd.getMessage());
+    //w.setRoomItems();
 
 
     return a.exec();
@@ -100,7 +101,7 @@ void ZorkUL::printWelcome() {
     hd.setMessage("Start!");
     hd.setMessage("Press Info for help");
     hd.setMessage(" ");
-    hd.setMessage(currentRoom->longDescription());
+    hd.setMessage(currentRoom->shortDescription());
 }
 
 /**
@@ -192,11 +193,13 @@ void ZorkUL::goRoom(Command command) {
 	// Try to leave current room.
 	Room* nextRoom = currentRoom->nextRoom(direction);
 
-	if (nextRoom == NULL)
-        hd.setMessage("underdefined input");
+    if (nextRoom == NULL) {
+        //hd.setMessage("underdefined input");
+        //currentRoom=currentRoom;
+    }
 	else {
 		currentRoom = nextRoom;
-        hd.setMessage(currentRoom->longDescription());
+        hd.setMessage(currentRoom->shortDescription());
         hd.setRoomItems(currentRoom->displayItem());
 	}
 }
@@ -219,4 +222,8 @@ string ZorkUL::go(string direction) {
 }
 void ZorkUL::removeRoomItem(Item temp){
     currentRoom->removeItem(temp);
+}
+
+void ZorkUL::addRoomItem(Item *temp){
+    currentRoom->addItem(temp);
 }

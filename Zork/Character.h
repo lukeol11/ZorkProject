@@ -17,7 +17,7 @@ private:
 public:
     Character();
     void addItem(Item *inItem);
-    void removeItem(Item *inItem);
+    void removeItem(Item obj);
     string displayItem();
 
 };

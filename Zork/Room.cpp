@@ -90,12 +90,6 @@ int Room::isItemInRoom(string inString)
 }
 
 void Room::removeItem(Item obj) {
-    /*for (auto it = begin (itemsInRoom); it != end (itemsInRoom); ++it){
-        if (it->isEqual(inItem)){
-            itemsInRoom.erase(it);
-        }
-    }*/
-
     vector pVector = itemsInRoom;
     for(int i=0; i < pVector.size(); i++){
        if (pVector[i].isEqual(obj)){
