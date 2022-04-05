@@ -176,6 +176,7 @@ void ZorkUL::goRoom(Command command) {
 	else {
 		currentRoom = nextRoom;
         hd.setMessage(currentRoom->longDescription());
+        hd.setRoomItems(currentRoom->displayItem());
 	}
 }
 
@@ -189,6 +190,7 @@ string ZorkUL::go(string direction) {
 	else
 	{
 		currentRoom = nextRoom;
+
 		return currentRoom->longDescription();
 	}
 }

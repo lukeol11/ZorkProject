@@ -22,3 +22,17 @@ std::string displayInfo::getMessage(){
     return outMessage;
     outMessage = "";
 }
+
+std::string roomInventory;
+void displayInfo::setRoomItems(std::string text){
+    if (roomInventory != ""){
+        roomInventory = roomInventory+"<br>"+text;
+    } else {
+        roomInventory = text;
+    }
+}
+
+std::string displayInfo::getRoomItems(){
+    return roomInventory;
+    roomInventory = "";
+}

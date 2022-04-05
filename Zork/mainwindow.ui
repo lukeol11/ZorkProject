@@ -17,9 +17,9 @@
    <widget class="QWidget" name="gridLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>230</x>
+      <x>290</x>
       <y>20</y>
-      <width>531</width>
+      <width>491</width>
       <height>351</height>
      </rect>
     </property>
@@ -68,9 +68,9 @@ p, li { white-space: pre-wrap; }
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>10</x>
       <y>20</y>
-      <width>160</width>
+      <width>277</width>
       <height>351</height>
      </rect>
     </property>
@@ -90,32 +90,28 @@ p, li { white-space: pre-wrap; }
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="dropButton">
-       <property name="text">
-        <string>Drop</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pickupButton">
-       <property name="text">
-        <string>Pickup</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QListWidget" name="inventoryView">
-       <item>
-        <property name="text">
-         <string>test</string>
-        </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="1" column="1">
+        <widget class="QListWidget" name="roomView"/>
        </item>
-       <item>
-        <property name="text">
-         <string>test2</string>
-        </property>
+       <item row="1" column="2">
+        <widget class="QListWidget" name="inventoryView"/>
        </item>
-      </widget>
+       <item row="0" column="1">
+        <widget class="QPushButton" name="pickupButton">
+         <property name="text">
+          <string>Pickup</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QPushButton" name="dropButton">
+         <property name="text">
+          <string>Drop</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
     </layout>
    </widget>

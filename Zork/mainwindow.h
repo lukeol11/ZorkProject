@@ -22,6 +22,7 @@ public:
     ~MainWindow();
     void setText(string content);
     void setInventory(string content);
+    void setRoomItems();
 
 
 

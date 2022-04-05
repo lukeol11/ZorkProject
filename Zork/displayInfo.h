@@ -11,6 +11,8 @@ class displayInfo
 public:
     void setMessage(std::string Text);
     std::string getMessage();
+    void setRoomItems(std::string Text);
+    std::string getRoomItems();
     displayInfo();
 
 private:
