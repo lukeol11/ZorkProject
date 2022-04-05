@@ -2,6 +2,7 @@
 #include "Command.h"
 
 
+
 Room::Room(string description) {
 	this->description = description;
 }
@@ -88,11 +89,18 @@ int Room::isItemInRoom(string inString)
     return -1;
 }
 
-void Room::removeItem(Item *inItem) {
-    for (auto it = begin (itemsInRoom); it != end (itemsInRoom); ++it){
-        if (it->getLongDescription() == inItem->getLongDescription()){
+void Room::removeItem(Item obj) {
+    /*for (auto it = begin (itemsInRoom); it != end (itemsInRoom); ++it){
+        if (it->isEqual(inItem)){
             itemsInRoom.erase(it);
-            break;
         }
+    }*/
+
+    vector pVector = itemsInRoom;
+    for(int i=0; i < pVector.size(); i++){
+       if (pVector[i].isEqual(obj)){
+           pVector.erase(pVector.begin()+i);
+       }
     }
+    itemsInRoom = pVector;
 }

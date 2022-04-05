@@ -25,6 +25,7 @@ public:
 	void setValue(float value);
 	int getWeaponCheck();
 	void setWeaponCheck(int weaponCheck);
+    bool isEqual(const Item temp);
 };
 
 #endif /*ITEM_H_*/

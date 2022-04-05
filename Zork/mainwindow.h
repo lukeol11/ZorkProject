@@ -6,6 +6,11 @@
 #include "Command.h"
 #include "ZorkUL.h"
 #include "displayInfo.h"
+#include <cstring>
+#include <fstream>
+#include "Character.h"
+#include "ZorkUL.h"
+#include "Room.h"
 using namespace std;
 
 QT_BEGIN_NAMESPACE

@@ -4,6 +4,8 @@
 #include <map>
 #include <string>
 #include <vector>
+#include <iostream>
+#include <algorithm>
 #include "item.h"
 using namespace std;
 using std::vector;
@@ -28,7 +30,7 @@ public:
     string displayItem();
     int isItemInRoom(string inString);
     void removeItemFromRoom(int location);
-    void removeItem(Item *inItem);
+    void removeItem(Item inItem);
 };
 
 #endif

@@ -9,13 +9,14 @@
 #include <iostream>
 #include <string>
 #include "displayInfo.h"
+#include "Character.h"
+#include <QApplication>
 
 
 
 class ZorkUL {
 private:
 	Parser parser;
-	Room *currentRoom;
 	void createRooms();
 	void printWelcome();
 	void printHelp();
@@ -27,11 +28,17 @@ private:
 
 
 
+
 public:
+    Room *currentRoom;
 	ZorkUL();
 	void play();
 	string go(string direction);
     bool processCommand(Command command);
+    void removeRoomItem(Item temp);
+
+
 };
+
 
 #endif /*ZORKUL_H_*/

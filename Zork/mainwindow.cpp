@@ -1,15 +1,13 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "displayInfo.h"
-#include <cstring>
-#include <fstream>
-#include <Character.h>
+#include "ZorkUL.h"
 
 
 ZorkUL t;
 Character steve;
 string roomItem;
 string inventoryItem;
+
 
 
 
@@ -88,6 +86,7 @@ void MainWindow::on_pickupButton_clicked(){
     if (getRoomItem() != ""){
     hd.setInventoryItems(getRoomItem());
     hd.removeRoomItems(getRoomItem());
+    t.removeRoomItem(Item(getRoomItem(),1,1));
     setInventoryItems();
     setRoomItems();
     }

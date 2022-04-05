@@ -1,11 +1,9 @@
-#include <iostream>
-#include "mainwindow.h"
-#include <QApplication>
 #include "ZorkUL.h"
-#include "displayInfo.h"
-#include "Character.h"
+
 
 displayInfo hd;
+
+
 
 
 int main(int argc, char *argv[]) {
@@ -30,35 +28,35 @@ void ZorkUL::createRooms()  {
     Room *a, *b, *c, *d, *e, *f, *g, *h, *i, *j;
 
 	a = new Room("a");
-        a->addItem(new Item("Stick", 1, 11));
-        a->addItem(new Item("Rock", 2, 22));
+        a->addItem(new Item("Stick", 1, 1));
+        a->addItem(new Item("Rock", 1, 1));
 	b = new Room("b");
-        b->addItem(new Item("String", 3, 33));
-        b->addItem(new Item("Shovel", 4, 44));
+        b->addItem(new Item("String", 1, 1));
+        b->addItem(new Item("Shovel", 1, 1));
 	c = new Room("c");
-        c->addItem(new Item("Feather", 5, 55));
-        c->addItem(new Item("Screw", 6, 66));
+        c->addItem(new Item("Feather", 1, 1));
+        c->addItem(new Item("Screw", 1, 1));
 	d = new Room("d");
-        d->addItem(new Item("Wire", 5, 55));
-        d->addItem(new Item("Cheese", 6, 66));
+        d->addItem(new Item("Wire", 1, 1));
+        d->addItem(new Item("Cheese", 1, 1));
 	e = new Room("e");
-        e->addItem(new Item("Boots", 5, 55));
-        e->addItem(new Item("Bolt", 6, 66));
+        e->addItem(new Item("Boots", 1, 1));
+        e->addItem(new Item("Bolt", 1, 1));
 	f = new Room("f");
-        f->addItem(new Item("Snake", 5, 55));
-        f->addItem(new Item("Jar", 6, 66));
+        f->addItem(new Item("Snake", 1, 1));
+        f->addItem(new Item("Jar", 1, 1));
 	g = new Room("g");
-        g->addItem(new Item("Plastic Wrapping", 5, 55));
-        g->addItem(new Item("Bottle", 6, 66));
+        g->addItem(new Item("Plastic Wrapping", 1, 1));
+        g->addItem(new Item("Bottle", 1, 1));
 	h = new Room("h");
-        h->addItem(new Item("Wheel", 5, 55));
-        h->addItem(new Item("Box", 6, 66));
+        h->addItem(new Item("Wheel", 1, 1));
+        h->addItem(new Item("Box", 1, 1));
 	i = new Room("i");
-        i->addItem(new Item("Key", 5, 55));
-        i->addItem(new Item("Timber", 6, 66));
+        i->addItem(new Item("Key", 1, 1));
+        i->addItem(new Item("Timber", 1, 1));
     j = new Room("j");
-        j->addItem(new Item("Nail", 5, 55));
-        j->addItem(new Item("Screwdriver", 6, 66));
+        j->addItem(new Item("Nail", 1, 1));
+        j->addItem(new Item("Screwdriver", 1, 1));
 
 //             (N, E, S, W)
 	a->setExits(f, b, d, c);
@@ -219,4 +217,6 @@ string ZorkUL::go(string direction) {
 
 
 }
-
+void ZorkUL::removeRoomItem(Item temp){
+    currentRoom->removeItem(temp);
+}

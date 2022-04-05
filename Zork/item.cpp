@@ -46,12 +46,12 @@ string Item::getLongDescription()
 }
 
 
-/*bool Item::isEqual(const Item temp){
+bool Item::isEqual(const Item temp){
     if (this->description == temp.description){
         return true;
     } else {
         return false;
     }
-}*/
+}
 
 
