@@ -86,6 +86,8 @@ void MainWindow::setInventory(string content){
 
 //room View
 void MainWindow::setRoomItems() {
+    ui->roomView->clear();
+    ui->roomView->update();
     string content = hd.getRoomItems();
     if (content != ""){
     char stra[1000];
