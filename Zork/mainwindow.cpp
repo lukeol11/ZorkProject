@@ -9,6 +9,7 @@
 ZorkUL t;
 Character steve;
 string roomItem;
+string inventoryItem;
 
 
 
@@ -24,12 +25,18 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
+std::string MainWindow::getRoomItem(){
+    return roomItem;
+}
+std::string MainWindow::getInventoryItem(){
+    return inventoryItem;
+}
 //displayInfo hd;
 //buttons
 
 void MainWindow::on_northButton_clicked()
 {
+    hd.emptyRoom();
     Command command("go", "north");
     t.processCommand(command);
     setText(hd.getMessage());
@@ -38,6 +45,7 @@ void MainWindow::on_northButton_clicked()
 
 void MainWindow::on_southButton_clicked()
 {
+    hd.emptyRoom();
      Command command("go", "south");
      t.processCommand(command);
      setText(hd.getMessage());
@@ -46,6 +54,7 @@ void MainWindow::on_southButton_clicked()
 
 void MainWindow::on_westButton_clicked()
 {
+    hd.emptyRoom();
     Command command("go", "west");
     t.processCommand(command);
     setText(hd.getMessage());
@@ -54,6 +63,7 @@ void MainWindow::on_westButton_clicked()
 
 void MainWindow::on_eastButton_clicked()
 {
+    hd.emptyRoom();
     Command command("go", "east");
     t.processCommand(command);
     setText(hd.getMessage());
@@ -74,17 +84,23 @@ void MainWindow::on_infoButton_clicked()
     setText(hd.getMessage());
 }
 
-void MainWindow::on_pickupButton_clicked()
-{
-    steve.addItem(new Item(roomItem, 1, 1));
-    hd.setInventoryItems(steve.displayItem());
+void MainWindow::on_pickupButton_clicked(){
+    if (getRoomItem() != ""){
+    hd.setInventoryItems(getRoomItem());
+    hd.removeRoomItems(getRoomItem());
     setInventoryItems();
+    setRoomItems();
+    }
 }
 
 
-void MainWindow::on_dropButton_clicked()
-{
+void MainWindow::on_dropButton_clicked(){
+    if (getInventoryItem() != ""){
+    hd.setRoomItems(getInventoryItem());
+    hd.removeInventoryItems(getInventoryItem());
     setInventoryItems();
+    setRoomItems();
+    }
 }
 
 
@@ -104,14 +120,14 @@ void MainWindow::setRoomItems() {
     ui->roomView->update();
     string content = hd.getRoomItems();
     if (content != ""){
-    char stra[1000];
-    const char *str = content.c_str();
-    std::strcpy(stra, str);
-    char *ptr;
-    ptr = strtok(stra, ",");
-    while (ptr != NULL) {
-        ui->roomView->addItem(ptr);
-        ptr = strtok(NULL, ",");
+        char stra[1000];
+        const char *str = content.c_str();
+        std::strcpy(stra, str);
+        char *ptr;
+        ptr = strtok(stra, ",");
+        while (ptr != NULL) {
+            ui->roomView->addItem(ptr);
+            ptr = strtok(NULL, ",");
     }}
     //ui->roomView->addItem();
 }
@@ -121,14 +137,14 @@ void MainWindow::setInventoryItems() {
     ui->inventoryView->update();
     string content = hd.getInventoryItems();
     if (content != ""){
-    char stra[1000];
-    const char *str = content.c_str();
-    std::strcpy(stra, str);
-    char *ptr;
-    ptr = strtok(stra, ",");
-    while (ptr != NULL) {
-        ui->inventoryView->addItem(ptr);
-        ptr = strtok(NULL, ",");
+        char stra[1000];
+        const char *str = content.c_str();
+        std::strcpy(stra, str);
+        char *ptr;
+        ptr = strtok(stra, ",");
+        while (ptr != NULL) {
+            ui->inventoryView->addItem(ptr);
+            ptr = strtok(NULL, ",");
     }}
     //ui->roomView->addItem();
 }
@@ -141,4 +157,10 @@ void MainWindow::on_roomView_itemClicked(QListWidgetItem *item)
     roomItem = item->text().toStdString();
 }
 
+
+
+void MainWindow::on_inventoryView_itemClicked(QListWidgetItem *item)
+{
+    inventoryItem = item->text().toStdString();
+}
 

@@ -3,6 +3,9 @@
 
 #include <iostream>
 #include <string>
+#include <cstring>
+#include <fstream>
+
 
 
 
@@ -16,6 +19,11 @@ public:
     void setInventoryItems(std::string Text);
     std::string getInventoryItems();
     displayInfo();
+    void removeInventoryItems(std::string content);
+    void removeRoomItems(std::string content);
+    void emptyRoom();
+    void resetRoomItems();
+    void resetInventoryItems();
 
 private:
 

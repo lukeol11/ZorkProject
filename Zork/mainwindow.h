@@ -47,7 +47,11 @@ private slots:
 
     void on_dropButton_clicked();
 
+    void on_inventoryView_itemClicked(QListWidgetItem *item);
+
 private:
     Ui::MainWindow *ui;
+    std::string getRoomItem();
+    std::string getInventoryItem();
 };
 #endif // MAINWINDOW_H

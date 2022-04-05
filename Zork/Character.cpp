@@ -42,7 +42,7 @@ string Character::displayItem() {
     else if (itemsInInventory.size() > 0) {
        int x = (0);
         for (int n = sizeItems; n > 0; n--) {
-            tempString = tempString + itemsInInventory[x].getShortDescription() + "," ;
+            tempString = tempString + "," ;
             x++;
             }
         }

@@ -1,4 +1,7 @@
 #include "displayInfo.h"
+#include <iostream>
+#include <string>
+#include <sstream>
 
 //void setOutput(string Text){w.setText(Text);}
 std::string outMessage;
@@ -25,33 +28,83 @@ std::string displayInfo::getMessage(){
 
 std::string roomInventory;
 
-void displayInfo::setRoomItems(std::string text){
+void displayInfo::emptyRoom(){
     roomInventory = "";
+}
+
+
+void displayInfo::setRoomItems(std::string text){
+    //roomInventory = "";
     if (roomInventory != ""){
-        roomInventory = roomInventory+"<br>"+text;
+        roomInventory = roomInventory+","+text;
     } else {
         roomInventory = text;
     }
 }
 
+void displayInfo::resetRoomItems(){
+    roomInventory = "";
+}
+
+
+
+void displayInfo::removeRoomItems(std::string text){
+    std::string s = getRoomItems();
+    hd.resetRoomItems();
+    std::string delimiter = ",";
+    size_t pos = 0;
+    std::string token;
+    while ((pos = s.find(delimiter)) != std::string::npos) {
+        token = s.substr(0, pos);
+        if (token == text){
+            //std::cout << token;
+        } else {
+            hd.setRoomItems(token);
+        }
+        s.erase(0, pos + delimiter.length());
+    }
+}
+
+
 std::string displayInfo::getRoomItems(){
     return roomInventory;
-    roomInventory = "";
+    //roomInventory = "";
 }
 
 std::string playerInventory;
 
 void displayInfo::setInventoryItems(std::string text){
-    playerInventory = "";
+    //playerInventory = "";
     if (playerInventory != ""){
-        playerInventory = playerInventory+"<br>"+text;
+        playerInventory = playerInventory+","+text;
     } else {
         playerInventory = text;
     }
 }
 
+void displayInfo::resetInventoryItems(){
+    playerInventory = "";
+}
+
+void displayInfo::removeInventoryItems(std::string text){
+    std::string s = getInventoryItems();
+    hd.resetInventoryItems();
+    std::string delimiter = ",";
+    size_t pos = 0;
+    std::string token;
+    while ((pos = s.find(delimiter)) != std::string::npos) {
+        token = s.substr(0, pos);
+        if (token == text){
+            //std::cout << token;
+        } else {
+            hd.setInventoryItems(token);
+        }
+        s.erase(0, pos + delimiter.length());
+    }
+}
+
 std::string displayInfo::getInventoryItems(){
     return playerInventory;
-    playerInventory = "";
+    //playerInventory = "";
 }
 

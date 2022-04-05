@@ -88,3 +88,11 @@ int Room::isItemInRoom(string inString)
     return -1;
 }
 
+void Room::removeItem(Item *inItem) {
+    for (auto it = begin (itemsInRoom); it != end (itemsInRoom); ++it){
+        if (it->getLongDescription() == inItem->getLongDescription()){
+            itemsInRoom.erase(it);
+            break;
+        }
+    }
+}
