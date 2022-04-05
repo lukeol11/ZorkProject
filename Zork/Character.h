@@ -16,6 +16,7 @@ private:
     vector <Item> itemsInInventory;
 public:
     void addItem(Item *inItem);
+    void removeItem(Item *inItem);
     string displayItem();
 
 };

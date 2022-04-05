@@ -14,8 +14,11 @@ int main(int argc, char *argv[]) {
     w.show();
     ZorkUL t;
     t.play();
+    //updates text on startup
     w.setText(hd.getMessage());
     w.setRoomItems();
+
+
     return a.exec();
 }
 
