@@ -23,19 +23,35 @@ void ZorkUL::createRooms()  {
     Room *a, *b, *c, *d, *e, *f, *g, *h, *i, *j;
 
 	a = new Room("a");
-        a->addItem(new Item("x", 1, 11));
-        a->addItem(new Item("y", 2, 22));
+        a->addItem(new Item("Stick", 1, 11));
+        a->addItem(new Item("Rock", 2, 22));
 	b = new Room("b");
-        b->addItem(new Item("xx", 3, 33));
-        b->addItem(new Item("yy", 4, 44));
+        b->addItem(new Item("String", 3, 33));
+        b->addItem(new Item("Shovel", 4, 44));
 	c = new Room("c");
+        c->addItem(new Item("Feather", 5, 55));
+        c->addItem(new Item("Screw", 6, 66));
 	d = new Room("d");
+        d->addItem(new Item("Wire", 5, 55));
+        d->addItem(new Item("Cheese", 6, 66));
 	e = new Room("e");
+        e->addItem(new Item("Boots", 5, 55));
+        e->addItem(new Item("Bolt", 6, 66));
 	f = new Room("f");
+        f->addItem(new Item("Snake", 5, 55));
+        f->addItem(new Item("Jar", 6, 66));
 	g = new Room("g");
+        g->addItem(new Item("Plastic Wrapping", 5, 55));
+        g->addItem(new Item("Bottle", 6, 66));
 	h = new Room("h");
+        h->addItem(new Item("Wheel", 5, 55));
+        h->addItem(new Item("Box", 6, 66));
 	i = new Room("i");
+        i->addItem(new Item("Key", 5, 55));
+        i->addItem(new Item("Timber", 6, 66));
     j = new Room("j");
+        j->addItem(new Item("Nail", 5, 55));
+        j->addItem(new Item("Screwdriver", 6, 66));
 
 //             (N, E, S, W)
 	a->setExits(f, b, d, c);
