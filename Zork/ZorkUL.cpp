@@ -3,8 +3,10 @@
 #include <QApplication>
 #include "ZorkUL.h"
 #include "displayInfo.h"
+#include "Character.h"
 
 displayInfo hd;
+
 
 int main(int argc, char *argv[]) {
     QApplication a(argc, argv);

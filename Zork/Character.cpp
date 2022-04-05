@@ -1,23 +1,29 @@
-/*#include "Character.h"
+#include "Character.h"
 
-Characterx::Characterx(string description) {
-	this->description = description;
+
+
+Character::Character(string description) {
+    this->description = description;
 }
-void Characterx::addItem(Item &item) {
-    itemsInCharacter.push_back(item);
+
+void Character::addItem(Item *inItem) {
+    itemsInInventory.push_back(*inItem);
 }
-void Characterx::addItem(Item *item) {
-    itemsInCharacter.push_back(*item);
-    delete item;
-}
-string Characterx::longDescription()
-{
-  string ret = this->description;
-  ret += "\n Item list:\n";
-  for (vector<Item>::iterator i = itemsInCharacter.begin(); i != itemsInCharacter.end(); i++)
-    ret += "\t"+ (*i).getLongDescription() + "\n";
-  return ret;
-}
-*/
+
+string Character::displayItem() {
+    string tempString; //= "items in inventory = ";
+    int sizeItems = (itemsInInventory.size());
+    if (itemsInInventory.size() < 1) {
+        tempString = "No Items were found";
+        }
+    else if (itemsInInventory.size() > 0) {
+       int x = (0);
+        for (int n = sizeItems; n > 0; n--) {
+            tempString = tempString + itemsInInventory[x].getShortDescription() + "," ;
+            x++;
+            }
+        }
+    return tempString;
+    }
 
 
