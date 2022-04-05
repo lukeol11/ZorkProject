@@ -13,6 +13,8 @@ public:
     std::string getMessage();
     void setRoomItems(std::string Text);
     std::string getRoomItems();
+    void setInventoryItems(std::string Text);
+    std::string getInventoryItems();
     displayInfo();
 
 private:

@@ -3,9 +3,12 @@
 #include "displayInfo.h"
 #include <cstring>
 #include <fstream>
+#include <Character.h>
 
 
 ZorkUL t;
+Character steve;
+string roomItem;
 
 
 
@@ -71,6 +74,20 @@ void MainWindow::on_infoButton_clicked()
     setText(hd.getMessage());
 }
 
+void MainWindow::on_pickupButton_clicked()
+{
+    steve.addItem(new Item(roomItem, 1, 1));
+    hd.setInventoryItems(steve.displayItem());
+    setInventoryItems();
+}
+
+
+void MainWindow::on_dropButton_clicked()
+{
+    setInventoryItems();
+}
+
+
 
 //output for display
 void MainWindow::setText(string content){
@@ -79,10 +96,7 @@ void MainWindow::setText(string content){
     //ui->displayWindow->
 }
 
-//inventory display
-void MainWindow::setInventory(string content){
-    ui->inventoryView->addItem(QString::fromStdString(content));
-}
+
 
 //room View
 void MainWindow::setRoomItems() {
@@ -102,5 +116,29 @@ void MainWindow::setRoomItems() {
     //ui->roomView->addItem();
 }
 
+void MainWindow::setInventoryItems() {
+    ui->inventoryView->clear();
+    ui->inventoryView->update();
+    string content = hd.getInventoryItems();
+    if (content != ""){
+    char stra[1000];
+    const char *str = content.c_str();
+    std::strcpy(stra, str);
+    char *ptr;
+    ptr = strtok(stra, ",");
+    while (ptr != NULL) {
+        ui->inventoryView->addItem(ptr);
+        ptr = strtok(NULL, ",");
+    }}
+    //ui->roomView->addItem();
+}
+
+
+
+
+void MainWindow::on_roomView_itemClicked(QListWidgetItem *item)
+{
+    roomItem = item->text().toStdString();
+}
 
 

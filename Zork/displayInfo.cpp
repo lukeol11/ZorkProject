@@ -38,3 +38,20 @@ std::string displayInfo::getRoomItems(){
     return roomInventory;
     roomInventory = "";
 }
+
+std::string playerInventory;
+
+void displayInfo::setInventoryItems(std::string text){
+    playerInventory = "";
+    if (playerInventory != ""){
+        playerInventory = playerInventory+"<br>"+text;
+    } else {
+        playerInventory = text;
+    }
+}
+
+std::string displayInfo::getInventoryItems(){
+    return playerInventory;
+    playerInventory = "";
+}
+

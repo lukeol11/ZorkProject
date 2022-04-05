@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 #include <string>
 #include <QMainWindow>
+#include <QListWidget>
 #include "Command.h"
 #include "ZorkUL.h"
 #include "displayInfo.h"
@@ -21,7 +22,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     void setText(string content);
-    void setInventory(string content);
+    void setInventoryItems();
     void setRoomItems();
 
 
@@ -39,6 +40,12 @@ private slots:
 
 
     void on_infoButton_clicked();
+
+    void on_roomView_itemClicked(QListWidgetItem *item);
+
+    void on_pickupButton_clicked();
+
+    void on_dropButton_clicked();
 
 private:
     Ui::MainWindow *ui;
