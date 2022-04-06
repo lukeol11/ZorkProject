@@ -49,11 +49,6 @@ std::string wordle::compareStrings(std::string input) {
     std::string returnString = "";
     int r1 = input.size();
     int r2 = randomWord.size();
-    if (randomWord == input) {
-        returnString = randomWord;
-    } else if (r2 != 5) {
-        returnString = "error";
-    } else{
         for (int i=0;i<r1;i++){
            for (int i1=0;i1<r2;i1++){
                if (input[i] == randomWord[i1]){
@@ -61,22 +56,28 @@ std::string wordle::compareStrings(std::string input) {
                }
            }
         }
-    }
     return returnString;;
 }
 
 
 std::string removeDuplicate(std::string str)
 {
-   //int lengthString = str.length();
-   for (int i=0;i<str.length();i++){
-       for (int j=0;j<str.length();j++){
-           if (str[i] == str[j] && j != i){
-               str.erase(j);
-           }
-       }
-   }
-   return str;
+    for ( std::string::size_type i = 0; i < str.size(); i++ )
+    {
+        std::string::size_type j = i + 1;
+        while ( j < str.size() )
+        {
+            if ( str[i] == str[j] )
+            {
+                str.erase( j, 1 );
+            }
+            else
+            {
+                ++j;
+            }
+        }
+    }
+    return str;
 }
 
 int selectedBox = 0;
@@ -118,7 +119,7 @@ void wordle::on_entryBox_returnPressed()
     //adds previous guesses
     finalReturn = finalReturn + guessedCharacters;
     //removes duplicate letters
-    finalReturn=removeDuplicate(finalReturn);
+    finalReturn= removeDuplicate(finalReturn);
     //adds to guess box
     ui->guessedBox->setText(QString::fromStdString(finalReturn));
 }
