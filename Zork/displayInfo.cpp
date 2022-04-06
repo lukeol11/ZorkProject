@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include "wordle.h"
 
 //void setOutput(string Text){w.setText(Text);}
 std::string outMessage;
@@ -75,6 +76,9 @@ std::string playerInventory;
 
 void displayInfo::setInventoryItems(std::string text){
     //playerInventory = "";
+    /*if (text == "Puzzle") {
+
+    }*/
     if (playerInventory != ""){
         playerInventory = playerInventory+","+text;
     } else {
