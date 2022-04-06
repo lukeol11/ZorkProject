@@ -11,6 +11,7 @@
 #include "Character.h"
 #include "ZorkUL.h"
 #include "Room.h"
+#include "wordle.h"
 using namespace std;
 
 QT_BEGIN_NAMESPACE
@@ -55,8 +56,12 @@ private slots:
 
     void on_inventoryView_itemClicked(QListWidgetItem *item);
 
+    void wordleLaunch();
+
 private:
     Ui::MainWindow *ui;
+    wordle *wordleGame;
+
     std::string getRoomItem();
     std::string getInventoryItem();
 };

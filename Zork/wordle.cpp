@@ -9,6 +9,7 @@ wordle::wordle(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->entryBox->setMaxLength(5);
+
 }
 
 wordle::~wordle()
@@ -87,6 +88,12 @@ std::string finalReturn = "";
 
 void wordle::on_entryBox_textChanged(const QString &arg1)
 {
+    if (arg1.toStdString()==randomWord){
+        ui->entryBox->setMaxLength(100);
+        ui->entryBox->setText("YOU WIN!!!!!");
+        ui->guessedBox->setText(QString::fromStdString(randomWord));
+        selectedBox=6;
+    }else{
     if (selectedBox == 0){
         ui->label_1->setText(arg1);
         if (arg1.length() == 5) guessedWord = arg1.toStdString();
@@ -105,8 +112,15 @@ void wordle::on_entryBox_textChanged(const QString &arg1)
     }else if (selectedBox == 5) {
         ui->label_6->setText(arg1);
         if (arg1.length() == 5) guessedWord = arg1.toStdString();
+    }else if (selectedBox==6){
         ui->entryBox->setText(QString::fromStdString(randomWord));
-    }
+    }else if (selectedBox==7){
+        this->close();
+    }}
+}
+
+void wordle::showWindow(){
+    this->show();
 }
 
 void wordle::on_entryBox_returnPressed()

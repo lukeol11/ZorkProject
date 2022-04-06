@@ -16,6 +16,9 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    /*wordleGame = new wordle(this);
+    wordleGame->show();
+    wordleGame->readFile();*/
 }
 
 MainWindow::~MainWindow()
@@ -88,7 +91,16 @@ void MainWindow::on_infoButton_clicked()
     setText(hd.getMessage());
 }
 
+void MainWindow::wordleLaunch(){
+    wordleGame = new wordle(this);
+    wordleGame->show();
+    wordleGame->readFile();
+}
+
 void MainWindow::on_pickupButton_clicked(){
+    if (getRoomItem() == "Puzzle"){
+        wordleLaunch();
+    }
     if (getRoomItem() != ""){
     hd.setInventoryItems(getRoomItem());
     hd.removeRoomItems(getRoomItem());
