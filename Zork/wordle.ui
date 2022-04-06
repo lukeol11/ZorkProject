@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>185</width>
+    <width>765</width>
     <height>600</height>
    </rect>
   </property>
@@ -14,42 +14,55 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPlainTextEdit" name="plainTextEdit">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>340</y>
-      <width>51</width>
-      <height>51</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>160</width>
-      <height>311</height>
+      <x>180</x>
+      <y>40</y>
+      <width>451</width>
+      <height>241</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
      <item>
-      <widget class="QPlainTextEdit" name="plainTextEdit_3"/>
+      <widget class="QPlainTextEdit" name="boxOne"/>
      </item>
      <item>
-      <widget class="QPlainTextEdit" name="plainTextEdit_2"/>
+      <widget class="QPlainTextEdit" name="boxTwo"/>
      </item>
      <item>
-      <widget class="QPlainTextEdit" name="plainTextEdit_5"/>
+      <widget class="QPlainTextEdit" name="boxThree"/>
      </item>
      <item>
-      <widget class="QPlainTextEdit" name="plainTextEdit_6"/>
+      <widget class="QPlainTextEdit" name="boxFour"/>
      </item>
      <item>
-      <widget class="QPlainTextEdit" name="plainTextEdit_4"/>
+      <widget class="QPlainTextEdit" name="boxFive"/>
+     </item>
+     <item>
+      <widget class="QPlainTextEdit" name="boxSix"/>
      </item>
     </layout>
+   </widget>
+   <widget class="QPlainTextEdit" name="correctCharacters">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>340</y>
+      <width>104</width>
+      <height>85</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="searcBox">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>460</y>
+      <width>104</width>
+      <height>85</height>
+     </rect>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -57,7 +70,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>185</width>
+     <width>765</width>
      <height>25</height>
     </rect>
    </property>

@@ -7,6 +7,9 @@ wordle::wordle()
 
 }
 
+std::string randomWord = "";
+const int MAX_CHAR = 26;
+
 std::string wordle::readFile(){
     std::vector<string> lines;
     QFile inputFile("fiveLetterWords.txt");
@@ -27,6 +30,26 @@ std::string wordle::readFile(){
     int random_number=rand()%total_lines;
 
     //fetch the line where line index (starting from 0) matches with the random number
+    randomWord = lines[random_number];
+    return randomWord;
+}
 
-    return lines[random_number];
+std::string wordle::compareStrings(std::string input) {
+    std::string returnString = "";
+    int r1 = input.size();
+    int r2 = randomWord.size();
+    if (randomWord == input) {
+        returnString = randomWord;
+    } else if (r2 != 5) {
+        returnString = "error";
+    } else{
+        for (int i=0;i<r1;i++){
+           for (int i1=0;i1<r2;i1++){
+               if (input[i] == randomWord[i1]){
+                   returnString= returnString + input[i];
+               }
+           }
+        }
+    }
+    return returnString;;
 }

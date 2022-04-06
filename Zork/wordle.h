@@ -14,6 +14,7 @@ class wordle
 public:
     wordle();
     std::string readFile();
+    std::string compareStrings(std::string input);
 
 private:
     //std::string v[5757];

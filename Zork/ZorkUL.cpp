@@ -16,10 +16,9 @@ int main(int argc, char *argv[]) {
     //updates text on startup
     //w.setText(hd.getMessage());
     //w.setRoomItems();
-    wordle temp;
-    hd.setMessage(temp.readFile());
-
-
+    //wordle temp;
+    //hd.setMessage(temp.readFile());
+    //hd.setMessage(temp.compareStrings("aeiou"));
     return a.exec();
 }
 
