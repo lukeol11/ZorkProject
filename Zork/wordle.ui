@@ -1,81 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>wordle</class>
+ <widget class="QWidget" name="wordle">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>765</width>
-    <height>600</height>
+    <width>609</width>
+    <height>560</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Form</string>
   </property>
-  <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="verticalLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>180</x>
-      <y>40</y>
-      <width>451</width>
-      <height>241</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_2">
-     <item>
-      <widget class="QPlainTextEdit" name="boxOne"/>
-     </item>
-     <item>
-      <widget class="QPlainTextEdit" name="boxTwo"/>
-     </item>
-     <item>
-      <widget class="QPlainTextEdit" name="boxThree"/>
-     </item>
-     <item>
-      <widget class="QPlainTextEdit" name="boxFour"/>
-     </item>
-     <item>
-      <widget class="QPlainTextEdit" name="boxFive"/>
-     </item>
-     <item>
-      <widget class="QPlainTextEdit" name="boxSix"/>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QPlainTextEdit" name="correctCharacters">
-    <property name="geometry">
-     <rect>
-      <x>330</x>
-      <y>340</y>
-      <width>104</width>
-      <height>85</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QPlainTextEdit" name="searcBox">
-    <property name="geometry">
-     <rect>
-      <x>330</x>
-      <y>460</y>
-      <width>104</width>
-      <height>85</height>
-     </rect>
-    </property>
-   </widget>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
+  <widget class="QLineEdit" name="entryBox">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>765</width>
-     <height>25</height>
+     <x>250</x>
+     <y>470</y>
+     <width>113</width>
+     <height>28</height>
     </rect>
    </property>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>120</y>
+     <width>160</width>
+     <height>157</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="label_1">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_3">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_4">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_5">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_6">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QLabel" name="guessedBox">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>390</y>
+     <width>63</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

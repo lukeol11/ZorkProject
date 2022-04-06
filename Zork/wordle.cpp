@@ -1,14 +1,22 @@
 #include "wordle.h"
+#include "ui_wordle.h"
 #include "ZorkUL.h"
-//#include "fiveLetterWords.txt"
 
-wordle::wordle()
+
+wordle::wordle(QWidget *parent) :
+    QWidget(parent),
+    ui(new Ui::wordle)
 {
+    ui->setupUi(this);
+    ui->entryBox->setMaxLength(5);
+}
 
+wordle::~wordle()
+{
+    delete ui;
 }
 
 std::string randomWord = "";
-const int MAX_CHAR = 26;
 
 std::string wordle::readFile(){
     std::vector<string> lines;
@@ -31,8 +39,11 @@ std::string wordle::readFile(){
 
     //fetch the line where line index (starting from 0) matches with the random number
     randomWord = lines[random_number];
+    std::cout << randomWord;
+    std::cout.flush();
     return randomWord;
 }
+
 
 std::string wordle::compareStrings(std::string input) {
     std::string returnString = "";
@@ -53,3 +64,62 @@ std::string wordle::compareStrings(std::string input) {
     }
     return returnString;;
 }
+
+
+std::string removeDuplicate(std::string str)
+{
+   //int lengthString = str.length();
+   for (int i=0;i<str.length();i++){
+       for (int j=0;j<str.length();j++){
+           if (str[i] == str[j] && j != i){
+               str.erase(j);
+           }
+       }
+   }
+   return str;
+}
+
+int selectedBox = 0;
+std::string guessedCharacters = "";
+std::string guessedWord = "";
+std::string finalReturn = "";
+
+void wordle::on_entryBox_textChanged(const QString &arg1)
+{
+    if (selectedBox == 0){
+        ui->label_1->setText(arg1);
+        if (arg1.length() == 5) guessedWord = arg1.toStdString();
+    }else if (selectedBox == 1) {
+        ui->label_2->setText(arg1);
+        if (arg1.length() == 5) guessedWord = arg1.toStdString();
+    }else if (selectedBox == 2) {
+        ui->label_3->setText(arg1);
+        if (arg1.length() == 5) guessedWord =arg1.toStdString();
+    }else if (selectedBox == 3) {
+        ui->label_4->setText(arg1);
+        if (arg1.length() == 5) guessedWord = arg1.toStdString();
+    }else if (selectedBox == 4) {
+        ui->label_5->setText(arg1);
+        if (arg1.length() == 5) guessedWord = arg1.toStdString();
+    }else if (selectedBox == 5) {
+        ui->label_6->setText(arg1);
+        if (arg1.length() == 5) guessedWord = arg1.toStdString();
+    }
+}
+
+void wordle::on_entryBox_returnPressed()
+{
+    //moves to next box
+    selectedBox++;
+    //resets entry box
+    ui->entryBox->setText(QString::fromStdString(""));
+    //checks to see if any characters match guessed word
+    guessedCharacters = this->compareStrings(guessedWord);
+    //adds previous guesses
+    finalReturn = finalReturn + guessedCharacters;
+    //removes duplicate letters
+    finalReturn=removeDuplicate(finalReturn);
+    //adds to guess box
+    ui->guessedBox->setText(QString::fromStdString(finalReturn));
+}
+

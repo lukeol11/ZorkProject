@@ -9,6 +9,9 @@ displayInfo hd;
 int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
     MainWindow w;
+    wordle w1;
+    w1.show();
+    w1.readFile();
     w.show();
     ZorkUL t;
     t.play();
