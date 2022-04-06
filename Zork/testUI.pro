@@ -17,7 +17,8 @@ SOURCES += \
     ZorkUL.cpp \
     displayInfo.cpp \
     item.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    wordle.cpp
 
 HEADERS += \
     Character.h \
@@ -28,12 +29,17 @@ HEADERS += \
     ZorkUL.h \
     displayInfo.h \
     item.h \
-    mainwindow.h
+    mainwindow.h \
+    wordle.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    wordle.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES += \
+    fiveLetterWords.txt

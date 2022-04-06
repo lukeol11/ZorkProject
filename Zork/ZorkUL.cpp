@@ -1,5 +1,5 @@
 #include "ZorkUL.h"
-
+#include "wordle.h"
 
 displayInfo hd;
 
@@ -16,6 +16,8 @@ int main(int argc, char *argv[]) {
     //updates text on startup
     //w.setText(hd.getMessage());
     //w.setRoomItems();
+    wordle temp;
+    hd.setMessage(temp.readFile());
 
 
     return a.exec();
