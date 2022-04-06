@@ -28,6 +28,9 @@ private slots:
 
     void on_entryBox_returnPressed();
 
+public slots:
+    void showWindow();
+
 private:
     Ui::wordle *ui;
 };

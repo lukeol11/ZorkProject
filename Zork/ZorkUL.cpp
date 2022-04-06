@@ -2,32 +2,25 @@
 #include "wordle.h"
 
 displayInfo hd;
-
+//bool wordleShow = false;
 
 
 
 int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
     MainWindow w;
-    wordle w1;
-    w1.show();
-    w1.readFile();
     w.show();
     ZorkUL t;
     t.play();
     w.update();
-    //updates text on startup
-    //w.setText(hd.getMessage());
-    //w.setRoomItems();
-    //wordle temp;
-    //hd.setMessage(temp.readFile());
-    //hd.setMessage(temp.compareStrings("aeiou"));
     return a.exec();
 }
+
 
 ZorkUL::ZorkUL() {
 	createRooms();
 }
+
 
 void ZorkUL::createRooms()  {
     Room *a, *b, *c, *d, *e, *f, *g, *h, *i, *j;
@@ -60,7 +53,7 @@ void ZorkUL::createRooms()  {
         i->addItem(new Item("Key", 1, 1));
         i->addItem(new Item("Timber", 1, 1));
     j = new Room("j");
-        j->addItem(new Item("Nail", 1, 1));
+        j->addItem(new Item("Puzzle", 1, 1));
         j->addItem(new Item("Screwdriver", 1, 1));
 
 //             (N, E, S, W)
@@ -105,7 +98,7 @@ void ZorkUL::printWelcome() {
     hd.setMessage("Start!");
     hd.setMessage("Press Info for help");
     hd.setMessage(" ");
-    hd.setMessage(currentRoom->shortDescription());
+    hd.setMessage("You enter Room " + currentRoom->shortDescription());
 }
 
 /**
@@ -203,7 +196,7 @@ void ZorkUL::goRoom(Command command) {
     }
 	else {
 		currentRoom = nextRoom;
-        hd.setMessage(currentRoom->shortDescription());
+        hd.setMessage("You enter Room "+    currentRoom->shortDescription());
         hd.setRoomItems(currentRoom->displayItem());
 	}
 }
