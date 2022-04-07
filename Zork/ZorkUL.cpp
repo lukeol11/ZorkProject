@@ -174,8 +174,8 @@ bool ZorkUL::processCommand(Command command) {
 }
 /** COMMANDS **/
 void ZorkUL::printHelp() {
-    hd.setMessage("valid inputs are; ");
-	parser.showCommands();
+    hd.setMessage("The Puzzle in Room J is the answer to all");
+    //parser.showCommands();
 
 }
 
